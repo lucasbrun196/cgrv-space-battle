@@ -8,7 +8,6 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private GameObject difficultyMenu;
     public void Play()
     {
-        Debug.Log("OLAAA");
         SceneManager.LoadScene(sceneName);
     }
 
