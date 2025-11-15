@@ -18,7 +18,6 @@
 *.user
 *.userprefs
 *.DS_Store
-*.meta
 *.pidb
 *.booproj
 
