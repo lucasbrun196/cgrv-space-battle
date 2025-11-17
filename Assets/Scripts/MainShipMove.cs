@@ -28,6 +28,7 @@ public class MainShipMove : MonoBehaviour
         ApplySpeed();
         ApplyRotation();
         FixDrift();
+        ClampToCameraBounds();
     }
     void ApplySpeed()
     {
@@ -58,5 +59,34 @@ public class MainShipMove : MonoBehaviour
         rb.linearVelocity = velocityUp + velocityRight * 0.0f;
     }
 
+    void ClampToCameraBounds()
+    {
+        Vector3 pos = transform.position;
+
+        // camera limits
+        Vector3 bottomLeft = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
+        Vector3 topRight = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
+
+        // if the plane hits the left/right/bottom border, stop its movement
+        if (pos.x < bottomLeft.x)
+        {
+            pos.x = bottomLeft.x;
+            rb.linearVelocity = Vector2.zero;
+        }
+
+        if (pos.x > topRight.x)
+        {
+            pos.x = topRight.x;
+            rb.linearVelocity = Vector2.zero;
+        }
+
+        if (pos.y < bottomLeft.y)
+        {
+            pos.y = bottomLeft.y;
+            rb.linearVelocity = Vector2.zero;
+        }
+
+        transform.position = pos;
+    }
 
 }
