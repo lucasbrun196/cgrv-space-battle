@@ -5,9 +5,12 @@ public class MainShipMove : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 mov;
     private float rotationAngle = 0;
-    [SerializeField]  float rotationSpeed;
-    [SerializeField] float speed;
-    
+    [SerializeField] float rotationSpeed;
+
+    [SerializeField] GameObject bullet;
+
+    [SerializeField] Transform shootPlace;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -28,7 +31,8 @@ public class MainShipMove : MonoBehaviour
         ApplySpeed();
         ApplyRotation();
         FixDrift();
-        ClampToCameraBounds();
+        Shoot();
+ 
     }
     void ApplySpeed()
     {
@@ -42,7 +46,7 @@ public class MainShipMove : MonoBehaviour
         }
        
         float currentSpeed = Vector2.Dot(transform.up, rb.linearVelocity);
-        if(currentSpeed >= 5.5 || currentSpeed <= -5.5) return;
+        if(currentSpeed >= 15 || currentSpeed <= -15) return;
         rb.AddForce(transform.up * mov.y, ForceMode2D.Force);
     }
 
@@ -57,6 +61,15 @@ public class MainShipMove : MonoBehaviour
         Vector2 velocityUp = transform.up * Vector2.Dot(rb.linearVelocity, transform.up);
         Vector2 velocityRight = transform.right * Vector2.Dot(rb.linearVelocity, transform.right);
         rb.linearVelocity = velocityUp + velocityRight * 0.0f;
+    }
+
+    void Shoot()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Instantiate(bullet, shootPlace.position, shootPlace.rotation);
+            
+        }
     }
 
     void ClampToCameraBounds()

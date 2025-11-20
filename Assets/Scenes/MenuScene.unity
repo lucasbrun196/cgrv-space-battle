@@ -1568,7 +1568,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &819020386
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2161,7 +2161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39e4a0ae9efdadefe9f9330bb8082642, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenuManager
-  sceneName: SampleScene
+  sceneName: GameScene
   initialMenu: {fileID: 90377119}
   difficultyMenu: {fileID: 819020385}
   aboutMenu: {fileID: 1295542634}
