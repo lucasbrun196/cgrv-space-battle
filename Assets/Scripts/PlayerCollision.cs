@@ -13,7 +13,6 @@ public class PlayerCollision : MonoBehaviour
     {
         if (collision.CompareTag("Asteroid"))
         {
-            Debug.Log("Game Over!");
             manager.GameOver();
             gameObject.SetActive(false);
         }
