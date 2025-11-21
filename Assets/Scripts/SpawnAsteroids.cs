@@ -3,19 +3,16 @@ using UnityEngine;
 public class SpawnAsteroids : MonoBehaviour
 {
     public GameObject asteroidPrefab;
+    public int numberOfAsteroids;
     public float maxX;
     public float minX;
     public float maxY;
     public float minY;
-    public float spawnInterval;
-    private float spawnTime;
 
-    void Update()
+    void Start()
     {
-        if (Time.time >= spawnTime)
-        {
+        for (int i = 0; i < numberOfAsteroids; i++) {
             SpawnAsteroid();
-            spawnTime = Time.time + spawnInterval;
         }
     }
 
