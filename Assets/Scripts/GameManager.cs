@@ -5,6 +5,13 @@ using System.Collections;
 public class GameManager : MonoBehaviour
 {
     public GameObject gameOverText;
+    public int enemiesKilled = 0;
+
+    public void EnemyKilled()
+    {
+        enemiesKilled++;
+        Debug.Log("Inimigos mortos: " + enemiesKilled);
+    }
 
     public void GameOver()
     {

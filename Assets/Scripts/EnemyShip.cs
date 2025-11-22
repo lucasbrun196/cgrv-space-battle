@@ -23,4 +23,12 @@ public class EnemyShip : MonoBehaviour
         rb.AddForce(pushDirection * pushForce, ForceMode2D.Impulse);
     }
 
+    public void Die()
+    {
+        GameManager gm = FindFirstObjectByType<GameManager>();
+        gm.EnemyKilled();
+
+        Destroy(gameObject);
+    }
+
 }
