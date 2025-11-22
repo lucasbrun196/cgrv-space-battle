@@ -11,7 +11,10 @@ public class SpawnAsteroids : MonoBehaviour
 
     void Start()
     {
-        for (int i = 0; i < numberOfAsteroids; i++) {
+        numberOfAsteroids = GameDifficulty.asteroidCount;
+
+        for (int i = 0; i < numberOfAsteroids; i++)
+        {
             SpawnAsteroid();
         }
     }

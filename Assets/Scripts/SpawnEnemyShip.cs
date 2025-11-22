@@ -17,7 +17,7 @@ public class SpawnEnemyShip : MonoBehaviour
 
     IEnumerator SpawnEnemiesRoutine()
     {
-        for (int i = 0; i < enemiesToSpawn; i++)
+        for (int i = 0; i < GameDifficulty.enemyCount; i++)
         {
             SpawnEnemy();
             yield return new WaitForSeconds(spawnDelay);

@@ -10,17 +10,21 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private GameObject rankingMenu;
     public void PlayEasy()
     {
-        // add dificulty settings
+        GameDifficulty.asteroidCount = 10;
+        GameDifficulty.enemyCount = 5;
         SceneManager.LoadScene(sceneName);
     }
+
     public void PlayMedium()
     {
-        // add dificulty settings
+        GameDifficulty.asteroidCount = 15;
+        GameDifficulty.enemyCount = 8;
         SceneManager.LoadScene(sceneName);
     }
     public void PlayHard()
     {
-        // add dificulty settings
+        GameDifficulty.asteroidCount = 20;
+        GameDifficulty.enemyCount = 11;
         SceneManager.LoadScene(sceneName);
     }
 
