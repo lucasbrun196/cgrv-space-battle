@@ -35,6 +35,11 @@ public class GameManager : MonoBehaviour
         StartCoroutine(GameOverRoutine());
     }
 
+    public void StartVictory()
+    {
+        StartCoroutine(VictoryRoutine());
+    }
+
     IEnumerator GameOverRoutine()
     {
         gameOverText.SetActive(true);
