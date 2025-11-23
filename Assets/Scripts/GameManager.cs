@@ -10,12 +10,12 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private TMP_Text counterText;
 
-
     public int enemiesKilled = 0;
-    public int enemiesToWin = 5;
+    public int enemiesToWin;
 
     void Start()
     {
+        enemiesToWin = GameDifficulty.enemiesToWin;
         UpdateCounterUI();
     }
 

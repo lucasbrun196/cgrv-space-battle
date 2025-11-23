@@ -11,20 +11,23 @@ public class MainMenuManager : MonoBehaviour
     public void PlayEasy()
     {
         GameDifficulty.asteroidCount = 10;
-        GameDifficulty.enemyCount = 5;
+        GameDifficulty.enemyCount = 10;
+        GameDifficulty.enemiesToWin = 5;
         SceneManager.LoadScene(sceneName);
     }
 
     public void PlayMedium()
     {
-        GameDifficulty.asteroidCount = 15;
-        GameDifficulty.enemyCount = 8;
+        GameDifficulty.asteroidCount = 20;
+        GameDifficulty.enemyCount = 15;
+        GameDifficulty.enemiesToWin = 8;
         SceneManager.LoadScene(sceneName);
     }
     public void PlayHard()
     {
-        GameDifficulty.asteroidCount = 20;
-        GameDifficulty.enemyCount = 11;
+        GameDifficulty.asteroidCount = 30;
+        GameDifficulty.enemyCount = 20;
+        GameDifficulty.enemiesToWin = 12;
         SceneManager.LoadScene(sceneName);
     }
 
