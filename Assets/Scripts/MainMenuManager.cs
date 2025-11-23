@@ -8,11 +8,14 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private GameObject difficultyMenu;
     [SerializeField] private GameObject aboutMenu;
     [SerializeField] private GameObject rankingMenu;
+    [SerializeField] private GameObject totalTime;
+
     public void PlayEasy()
     {
         GameDifficulty.asteroidCount = 10;
         GameDifficulty.enemyCount = 10;
         GameDifficulty.enemiesToWin = 5;
+        GameDifficulty.totalTime = 120f;
         SceneManager.LoadScene(sceneName);
     }
 
@@ -21,6 +24,7 @@ public class MainMenuManager : MonoBehaviour
         GameDifficulty.asteroidCount = 20;
         GameDifficulty.enemyCount = 15;
         GameDifficulty.enemiesToWin = 8;
+        GameDifficulty.totalTime = 90f;
         SceneManager.LoadScene(sceneName);
     }
     public void PlayHard()
@@ -28,6 +32,7 @@ public class MainMenuManager : MonoBehaviour
         GameDifficulty.asteroidCount = 30;
         GameDifficulty.enemyCount = 20;
         GameDifficulty.enemiesToWin = 12;
+        GameDifficulty.totalTime = 60f;
         SceneManager.LoadScene(sceneName);
     }
 

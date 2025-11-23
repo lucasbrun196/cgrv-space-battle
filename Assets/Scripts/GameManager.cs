@@ -9,14 +9,32 @@ public class GameManager : MonoBehaviour
     public GameObject victoryText;
 
     [SerializeField] private TMP_Text counterText;
+    [SerializeField] private TMP_Text timerText;
 
     public int enemiesKilled = 0;
     public int enemiesToWin;
 
+    private float currentTime;
+
     void Start()
     {
+        currentTime = GameDifficulty.totalTime;
         enemiesToWin = GameDifficulty.enemiesToWin;
         UpdateCounterUI();
+        UpdateTimerUI();
+    }
+
+    void Update()
+    {
+        currentTime -= Time.deltaTime;
+
+        if (currentTime <= 0)
+        {
+            currentTime = 0;
+            GameOver();
+        }
+
+        UpdateTimerUI();
     }
 
     public void AddKill()
@@ -28,6 +46,13 @@ public class GameManager : MonoBehaviour
     void UpdateCounterUI()
     {
         counterText.text = enemiesKilled + "/" + enemiesToWin;
+    }
+
+    void UpdateTimerUI()
+    {
+        int minutes = Mathf.FloorToInt(currentTime / 60);
+        int seconds = Mathf.FloorToInt(currentTime % 60);
+        timerText.text = $"{minutes:00}:{seconds:00}";
     }
 
     public void GameOver()
