@@ -71,12 +71,34 @@ public class GameManager : MonoBehaviour
     public void StartVictory()
     {
         counting = false;
-        
-        PlayerPrefs.SetFloat("lastLevelTime", levelTimer);
 
-        Debug.Log("Tempo total para vencer: " + levelTimer);
+        float lastTime = levelTimer;
+
+        float top1 = PlayerPrefs.GetFloat("top1", float.MaxValue);
+        float top2 = PlayerPrefs.GetFloat("top2", float.MaxValue);
+        float top3 = PlayerPrefs.GetFloat("top3", float.MaxValue);
+
+        if (lastTime < top1)
+        {
+            PlayerPrefs.SetFloat("top3", top2);
+            PlayerPrefs.SetFloat("top2", top1);
+            PlayerPrefs.SetFloat("top1", lastTime);
+        }
+        else if (lastTime < top2)
+        {
+            PlayerPrefs.SetFloat("top3", top2);
+            PlayerPrefs.SetFloat("top2", lastTime);
+        }
+        else if (lastTime < top3)
+        {
+            PlayerPrefs.SetFloat("top3", lastTime);
+        }
+
+        PlayerPrefs.SetFloat("lastLevelTime", lastTime);
+
         StartCoroutine(VictoryRoutine());
     }
+
 
     IEnumerator GameOverRoutine()
     {
