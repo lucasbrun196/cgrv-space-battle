@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class MainMenuManager : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private GameObject aboutMenu;
     [SerializeField] private GameObject rankingMenu;
     [SerializeField] private GameObject totalTime;
+
+    public TMP_Text rankingTimeValue;
 
     public void PlayEasy()
     {
@@ -48,6 +51,12 @@ public class MainMenuManager : MonoBehaviour
     }
     public void OpenRankingMenu()
     {
+        float lastTime = PlayerPrefs.GetFloat("lastLevelTime", 0f);
+        int minutes = Mathf.FloorToInt(lastTime / 60);
+        int seconds = Mathf.FloorToInt(lastTime % 60);
+
+        rankingTimeValue.text = $"{minutes:00}:{seconds:00}";
+        
         rankingMenu.SetActive(true);
         initialMenu.SetActive(false);
     }

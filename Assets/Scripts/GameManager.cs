@@ -15,9 +15,14 @@ public class GameManager : MonoBehaviour
     public int enemiesToWin;
 
     private float currentTime;
+    private float levelTimer = 0f;
+    private bool counting = false;
 
     void Start()
     {
+        counting = true;
+        levelTimer = 0f;
+
         currentTime = GameDifficulty.totalTime;
         enemiesToWin = GameDifficulty.enemiesToWin;
         UpdateCounterUI();
@@ -33,6 +38,9 @@ public class GameManager : MonoBehaviour
             currentTime = 0;
             GameOver();
         }
+
+        if (counting)
+            levelTimer += Time.deltaTime;
 
         UpdateTimerUI();
     }
@@ -62,6 +70,11 @@ public class GameManager : MonoBehaviour
 
     public void StartVictory()
     {
+        counting = false;
+        
+        PlayerPrefs.SetFloat("lastLevelTime", levelTimer);
+
+        Debug.Log("Tempo total para vencer: " + levelTimer);
         StartCoroutine(VictoryRoutine());
     }
 
