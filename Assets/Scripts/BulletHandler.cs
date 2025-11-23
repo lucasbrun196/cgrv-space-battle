@@ -18,12 +18,10 @@ public class BulletHandler : MonoBehaviour
     {
         if (collision.CompareTag("EnemyShip"))
         {
-            var enemy = collision.GetComponent<EnemyShip>();
-            if (enemy != null)
-            {
-                enemy.Die();
-            }
+            GameManager manager = FindFirstObjectByType<GameManager>();
+            manager.AddKill();
 
+            Destroy(collision.gameObject);
             Destroy(gameObject);
         }
     }

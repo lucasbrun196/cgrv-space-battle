@@ -1,16 +1,33 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     public GameObject gameOverText;
-    public int enemiesKilled = 0;
+    public GameObject victoryText;
 
-    public void EnemyKilled()
+    [SerializeField] private TMP_Text counterText;
+
+
+    public int enemiesKilled = 0;
+    public int enemiesToWin = 5;
+
+    void Start()
+    {
+        UpdateCounterUI();
+    }
+
+    public void AddKill()
     {
         enemiesKilled++;
-        Debug.Log("Inimigos mortos: " + enemiesKilled);
+        UpdateCounterUI();
+    }
+
+    void UpdateCounterUI()
+    {
+        counterText.text = enemiesKilled + "/" + enemiesToWin;
     }
 
     public void GameOver()
@@ -21,6 +38,13 @@ public class GameManager : MonoBehaviour
     IEnumerator GameOverRoutine()
     {
         gameOverText.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("MenuScene");
+    }
+
+    IEnumerator VictoryRoutine()
+    {
+        victoryText.SetActive(true);
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("MenuScene");
     }
