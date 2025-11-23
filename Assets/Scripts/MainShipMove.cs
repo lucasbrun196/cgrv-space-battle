@@ -47,7 +47,7 @@ public class MainShipMove : MonoBehaviour
        
         float currentSpeed = Vector2.Dot(transform.up, rb.linearVelocity);
         if(currentSpeed >= 15 || currentSpeed <= -15) return;
-        rb.AddForce(transform.up * mov.y, ForceMode2D.Force);
+        rb.AddForce(transform.up * mov.y * 5f, ForceMode2D.Force);
     }
 
     void ApplyRotation()
