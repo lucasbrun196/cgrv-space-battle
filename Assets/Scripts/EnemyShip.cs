@@ -27,7 +27,6 @@ public class EnemyShip : MonoBehaviour
     public void ReverseDirection()
     {
         direction *= -1;
-
         transform.Rotate(0f, 0, 180f);
     }
 
