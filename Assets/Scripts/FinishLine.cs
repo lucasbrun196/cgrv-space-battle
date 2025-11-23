@@ -1,8 +1,10 @@
 using UnityEngine;
+using System.Collections;
 
 public class FinishLine : MonoBehaviour
 {
     private GameManager manager;
+    public GameObject keepPlayingText;
 
     void Start()
     {
@@ -19,8 +21,15 @@ public class FinishLine : MonoBehaviour
             }
             else
             {
-                Debug.Log("Ainda não matou o suficiente!");
+                StartCoroutine(KeepPlayingRoutine());
             }
         }
+    }
+
+    IEnumerator KeepPlayingRoutine()
+    {
+        keepPlayingText.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        keepPlayingText.SetActive(false);
     }
 }
