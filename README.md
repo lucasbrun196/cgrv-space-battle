@@ -1,8 +1,7 @@
 # README DO PROJETO DE COMPUTAÇÃO GRÁFICA E REALIDADE VIRTUAL
 
-# TODO: 
-Adicionar link do vídeo demonstrativo do game
-Adicionar link para baixar o executável
+Link do vídeo demonstrativo do game - [https://drive.google.com/file/d/194x58KNNJSALFldY5W-YJ8v3HkUylNy1/view?usp=sharing]
+Link para baixar o executável - [https://drive.google.com/file/d/1LOEPXgoFOe-n4q71yXs2F4Mv-8CCM6ux/view?usp=sharing]
 
 # Assets
 https://assetstore.unity.com/packages/2d/characters/pixel-art-space-ship-part-1-228832
