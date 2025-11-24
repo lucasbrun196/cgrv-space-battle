@@ -4,6 +4,8 @@ public class BulletHandler : MonoBehaviour
 {
     [SerializeField] float bullteSpeed;
 
+    public AudioClip explosionSoundEffect;
+
     void FixedUpdate(){
         MoveBullet();
     }
@@ -17,6 +19,8 @@ public class BulletHandler : MonoBehaviour
     {
         if (collision.CompareTag("EnemyShip"))
         {
+            AudioSource.PlayClipAtPoint(explosionSoundEffect, transform.position);
+
             GameManager manager = FindFirstObjectByType<GameManager>();
             manager.AddKill();
 

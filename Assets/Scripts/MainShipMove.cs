@@ -11,14 +11,15 @@ public class MainShipMove : MonoBehaviour
 
     [SerializeField] Transform shootPlace;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public AudioClip shootSoundEffect;
+    private AudioSource audioSource;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         mov.y = Input.GetAxis("Vertical");
@@ -68,7 +69,7 @@ public class MainShipMove : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             Instantiate(bullet, shootPlace.position, shootPlace.rotation);
-            
+            audioSource.PlayOneShot(shootSoundEffect);
         }
     }
 

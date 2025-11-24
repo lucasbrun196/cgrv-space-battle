@@ -142,6 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletHandler
   bullteSpeed: 30
+  explosionSoundEffect: {fileID: 8300000, guid: e8b1e5fce20e51b43b461f32da025fa2, type: 3}
 --- !u!50 &4148506820517359788
 Rigidbody2D:
   serializedVersion: 5
