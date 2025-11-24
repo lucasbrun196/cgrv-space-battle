@@ -4,8 +4,7 @@ public class BulletHandler : MonoBehaviour
 {
     [SerializeField] float bullteSpeed;
 
-    void Update()
-    {
+    void FixedUpdate(){
         MoveBullet();
     }
 
