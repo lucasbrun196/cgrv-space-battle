@@ -1,8 +1,27 @@
-# README DO PROJETO DE COMPUTAÇÃO GRÁFICA E REALIDADE VIRTUAL
+## README DO PROJETO DE COMPUTAÇÃO GRÁFICA E REALIDADE VIRTUAL
 
-Link do vídeo demonstrativo do game - [https://drive.google.com/file/d/1k_4REeklPMhDuWQSQqU2e1z6N73EKNrr/view?usp=sharing]
-Link para baixar o executável - [https://drive.google.com/file/d/1LOEPXgoFOe-n4q71yXs2F4Mv-8CCM6ux/view?usp=sharing]
+## Demonstração
+Link do vídeo demonstrativo do game: [https://drive.google.com/file/d/1k_4REeklPMhDuWQSQqU2e1z6N73EKNrr/view?usp=sharing]
 
-# Assets
-https://assetstore.unity.com/packages/2d/characters/pixel-art-space-ship-part-1-228832
-https://assetstore.unity.com/packages/2d/environments/2d-pixel-asteroids-136477
+## Download do jogo
+Link para baixar o executável: [https://drive.google.com/file/d/1LOEPXgoFOe-n4q71yXs2F4Mv-8CCM6ux/view?usp=sharing]
+
+## Comandos
+- **W** → Andar para frente (baseado na direção do avião)  
+- **A** → Girar para a esquerda  
+- **D** → Girar para a direita  
+- **Botão esquerdo do mouse** → Atirar
+  
+## Níveis de dificuldade
+
+- **Fácil**  
+  - Tempo: 2 minutos  
+  - Objetivo: Matar 5 aeronaves, desviar dos asteroides e chegar no checkpoint  
+
+- **Médio**  
+  - Tempo: 1 minuto 30 segundos  
+  - Objetivo: Matar 8 aeronaves, desviar dos asteroides e chegar no checkpoint  
+
+- **Difícil**  
+  - Tempo: 1 minuto  
+  - Objetivo: Matar 12 aeronaves, desviar dos asteroides e chegar no checkpoint  
