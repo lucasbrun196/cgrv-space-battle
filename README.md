@@ -1,6 +1,6 @@
 # README DO PROJETO DE COMPUTAÇÃO GRÁFICA E REALIDADE VIRTUAL
 
-Link do vídeo demonstrativo do game - [https://drive.google.com/file/d/194x58KNNJSALFldY5W-YJ8v3HkUylNy1/view?usp=sharing]
+Link do vídeo demonstrativo do game - [https://drive.google.com/file/d/1k_4REeklPMhDuWQSQqU2e1z6N73EKNrr/view?usp=sharing]
 Link para baixar o executável - [https://drive.google.com/file/d/1LOEPXgoFOe-n4q71yXs2F4Mv-8CCM6ux/view?usp=sharing]
 
 # Assets
