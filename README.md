@@ -4,7 +4,7 @@
 Link do vídeo demonstrativo do game: [https://drive.google.com/file/d/1bFJtTGk6GGIE1erbU7sZ_eKLlHSWmZ2N/view?usp=sharing]
 
 ## Download do jogo
-Link para baixar o executável: [https://drive.google.com/drive/folders/1G6wp2PURcsx_vGlVlF1e79aR2E52gsyA?usp=sharing]
+Link para baixar o executável e dependências: [https://drive.google.com/drive/folders/1zeCGOvRAxQrm1qEUyfJT6QyvlwY6o0R4?usp=sharing]
 
 ## Comandos
 - **W** → Andar para frente (baseado na direção do avião)  
